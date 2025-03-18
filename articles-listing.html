@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沉香文化 | 马来西亚野生沉香 | 佛教珍品</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Microsoft YaHei", "SimHei", sans-serif;
+    }
+    
+    body {
+      background-color: #f8f5f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/400') center/cover no-repeat;
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+    }
+    
+    .tagline {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #B8860B;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #B8860B;
+    }
+    
+    /* Articles Section */
+    .articles-section {
+      padding: 60px 0;
+      background-color: #fff;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 50px;
+      color: #333;
+      position: relative;
+    }
+    
+    .section-title:after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #B8860B;
+    }
+    
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+    
+    .article-card {
+      background-color: #f8f5f0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .article-image {
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .article-content {
+      padding: 30px;
+    }
+    
+    .article-title {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .article-meta {
+      display: flex;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .article-author {
+      margin-right: 20px;
+    }
+    
+    .article-excerpt {
+      font-size: 15px;
+      margin-bottom: 20px;
+      color: #666;
+      line-height: 1.7;
+    }
+    
+    .article-link {
+      display: inline-block;
+      padding: 8px 20px;
+      background-color: #B8860B;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    
+    .article-link:hover {
+      background-color: #A67C00;
+    }
+    
+    /* Featured Article */
+    .featured-article {
+      margin-bottom: 60px;
+    }
+    
+    .featured-article .article-card {
+      display: flex;
+      flex-direction: row;
+      height: auto;
+    }
+    
+    .featured-article .article-image {
+      flex: 1;
+      height: auto;
+    }
+    
+    .featured-article .article-content {
+      flex: 1;
+    }
+    
+    /* Article Detail */
+    .article-detail {
+      padding: 60px 0;
+      background-color: #fff;
+    }
+    
+    .article-header {
+      margin-bottom: 40px;
+    }
+    
+    .article-detail-title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    
+    .article-detail-meta {
+      display: flex;
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #666;
+    }
+    
+    .article-detail-image {
+      width: 100%;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 40px;
+      border-radius: 8px;
+    }
+    
+    .article-detail-content {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #333;
+    }
+    
+    .article-detail-content p {
+      margin-bottom: 20px;
+    }
+    
+    .article-detail-content h2 {
+      font-size: 24px;
+      margin: 40px 0 20px;
+      color: #333;
+    }
+    
+    .article-detail-content h3 {
+      font-size: 20px;
+      margin: 30px 0 15px;
+      color: #333;
+    }
+    
+    .article-tags {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .article-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      background-color: #f0e6d2;
+      color: #B8860B;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      padding: 30px;
+      background-color: #f8f5f0;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    
+    .sidebar-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+      position: relative;
+    }
+    
+    .sidebar-title:after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: #B8860B;
+    }
+    
+    .popular-posts {
+      list-style: none;
+    }
+    
+    .popular-post {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .popular-post:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    
+    .popular-post-image {
+      width: 70px;
+      height: 70px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+      margin-right: 15px;
+    }
+    
+    .popular-post-content {
+      flex: 1;
+    }
+    
+    .popular-post-title {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    
+    .popular-post-title a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .popular-post-title a:hover {
+      color: #B8860B;
+    }
+    
+    .popular-post-date {
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .categories {
+      list-style: none;
+    }
+    
+    .category-item {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .category-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    
+    .category-link {
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .category-link:hover {
+      color: #B8860B;
+    }
+    
+    .category-count {
+      background-color: #e5e5e5;
+      color: #666;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 50px 0;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .footer-column {
+      flex: 1;
+      margin-right: 30px;
+    }
+    
+    .footer-title {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #B8860B;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: #B8860B;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      font-size: 14px;
+      color: #ccc;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .featured-article .article-card {
+        flex-direction: column;
+      }
+      
+      .featured-article .article-image {
+        height: 250px;
+      }
+      
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+      }
+      
+      .footer-column {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <div class="nav-logo">香木祥缘</div>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html#products">产品</a></li>
+        <li><a href="articles.html">沉香文化</a></li>
+        <li><a href="index.html#about">关于我们</a></li>
+        <li><a href="index.html#contact">联系我们</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">沉香文化</div>
+      <div class="tagline">了解千年沉香文化，探寻天然沉香的奥秘</div>
+    </div>
+  </header>
+  
+  <!-- Featured Article -->
+  <section class="articles-section">
+    <div class="container">
+      <h2 class="section-title">精选文章</h2>
+      
+      <div class="featured-article">
+        <div class="article-card">
+          <div class="article-image" style="background-image: url('/api/placeholder/600/400')"></div>
+          <div class="article-content">
+            <h3 class="article-title">沉香：佛教中的神圣供养</h3>
+            <div class="article-meta">
+              <div class="article-author">作者：香木祥缘</div>
+              <div class="article-date">2025年3月10日</div>
+            </div>
+            <div class="article-excerpt">
+              沉香是佛教中重要的供养之一，更是唯一能通三界的香气而着称。气味美好，能袪除种种不净。本文将带您了解沉香在佛教文化中的重要地位，以及为什么它被视为连接人间与佛界的神圣桥梁。
+            </div>
+            <a href="#article1" class="article-link">阅读全文</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Articles Grid -->
+      <div class="articles-grid">
+        <div class="article-card">
+          <div class="article-image" style="background-image: url('/api/placeholder/500/300')"></div>
+          <div class="article-content">
+            <h3 class="article-title">沉香的天然香韵：千变万化的层次</h3>
+            <div class="article-meta">
+              <div class="article-author">作者：香木祥缘</div>
+              <div class="article-date">2025年3月5日</div>
+            </div>
+            <div class="article-excerpt">
+              沉香的天然香韵千變萬化，層次豐富多元，聞之有幽雅沉靜微微沁涼之感。本文将深入探讨沉香独特的香气特性，以及如何品鉴不同产地、不同品级的沉香香气。
+            </div>
+            <a href="#article2" class="article-link">阅读全文</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-image" style="background-image: url('/api/placeholder/500/300')"></div>
+          <div class="article-content">
+            <h3 class="article-title">马来西亚沉香：世界顶级产区的秘密</h3>
+            <div class="article-meta">
+              <div class="article-author">作者：香木祥缘</div>
+              <div class="article-date">2025年2月25日</div>
+            </div>
+            <div class="article-excerpt">
+              马来西亚作为世界顶级沉香产区之一，有着得天独厚的地理环境和气候条件。本文带您深入了解马来西亚沉香的特点、形成过程以及为何马来西亚野生沉香在全球市场备受推崇。
+            </div>
+            <a href="#article3" class="article-link">阅读全文</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-image" style="background-image: url('/api/placeholder/500/300')"></div>
+          <div class="article-content">
+            <h3 class="article-title">佛珠与沉香：修行者的双重法宝</h3>
+            <div class="article-meta">
+              <div class="article-author">作者：香木祥缘</div>
+              <div class="article-date">2025年2月18日</div>
+            </div>
+            <div class="article-excerpt">
+              佛珠和沉香在佛教修行中都具有重要意义。本文探讨沉香佛珠如何成为修行者的双重法宝，既能助力静心冥想，又能净化修行环境，提升修行效果。
+            </div>
+            <a href="#article4" class="article-link">阅读全文</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="article-image" style="background-image: url('/api/placeholder/500/300')"></div>
+          <div class="article-content">
+            <h3 class="article-title">如何辨别真假沉香：专业鉴别技巧</h3>
+            <div class="article-meta">
+              <div class="article-author">作者：香木祥缘</div>
+              <div class="article-date">2025年2月10日</div>
+            </div>
+            <div class="article-excerpt">
+              随着沉香价值的提升，市场上假冒伪劣产品也日益增多。本文由专业沉香鉴定师分享如何从外观、气味、密度等多个方面辨别真假沉香，避免购买到劣质产品。
+            </div>
+            <a href="#article5" class="article-link">阅读全文</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Article Detail -->
+  <section class="article-detail" id="article1">
+    <div class="container">
+      <div class="article-header">
+        <h1 class="article-detail-title">沉香：佛教中的神圣供养</h1>
+        <div class="article-detail-meta">
+          <div class="article-author">作者：香木祥缘</div>
+          <div class="article-date">2025年3月10日</div>
+        </div>
+      </div>
+      
+      <div class="article-detail-image" style="background-image: url('/api/placeholder/1200/600')"></div>
+      
+      <div class="article-detail-content">
+        <p>沉香在佛教文化中占据着极其重要的地位，被尊为"香中之王"，是佛教中重要的供养之一，更是唯一能通三界的香气而着称。自古以来，沉香就被视为连接人间与佛界的神圣桥梁，在佛教修行、仪式与供养中不可或缺。</p>
+        
+        <h2>沉香在佛教历史中的地位</h2>
+        <p>佛教典籍中多次提及沉香的珍贵性和神圣性。《观无量寿经》中记载七宝池中有"沉香为泥"，可见沉香在佛国净土中的重要地位。《法华经》中也有"沉水香木"的记载，用于形容极乐世界的庄严与纯净。</p>
+        
+        <p>在历史上，沉香被用作佛像雕刻的材料，同时也是供佛的重要香品。无论是寺院法会还是个人修行，沉香都是首选的供养之一。佛教认为，沉香的香气能够传达信众的虔诚，直达佛界，同时也能净化周围的环境，创造适合修行的清净空间。</p>
+        
+        <h2>沉香的净化功能</h2>
+        <p>沉香之所以在佛教中如此受重视，很大一部分原因在于其净化功能。佛教认为沉香具有以下几个方面的净化作用：</p>
+        
+        <h3>净化空间</h3>
+        <p>沉香燃烧时释放的香气能袪除空间中的不净之气，创造一个清净的修行环境。许多寺院在早晚课诵或重大法会前，都会先用沉香熏净道场，以示对佛法的尊重，也为修行创造良好条件。</p>
+        
+        <h3>净化心灵</h3>
+        <p>沉香的气味沉稳深远，有助于静心冥想。修行者在闻到沉香气息时，更容易进入专注状态，排除杂念，达到心灵的净化。这也是为什么许多禅修者喜欢在修行时点燃沉香的原因。</p>
+        
+        <h3>净化业障</h3>
+        <p>在佛教传统中，沉香被认为能够消除业障。通过沉香供养，信众表达对佛法的恭敬，同时也借此消除自身的罪障，获得功德。这一观念在很多佛教经典中都有所体现。</p>
+        
+        <h2>沉香：通三界的香气</h2>
+        <p>佛教中有"沉香通三界"的说法，意指沉香的香气能够贯通欲界、色界和无色界三界，直达佛陀所在。这一观念体现了沉香作为沟通人与佛之间媒介的特殊地位。</p>
+        
+        <p>沉香的香气被描述为"气味美好，能袪除种种不净"。这里的"不净"不仅指物质上的污秽，更包括心灵上的烦恼和障碍。沉香的香气既能外在地净化环境，又能内在地帮助修行者净化心灵，双重功效使其成为佛教供养中的珍品。</p>
+        
+        <h2>沉香在现代佛教实践中的应用</h2>
+        <p>在现代佛教实践中，沉香仍然保持着其重要地位。无论是寺院的早晚课诵，还是个人的家庭佛堂，沉香都是常见的供品。尤其是在重要的佛教节日或法会中，高品质的沉香更是不可或缺的供养。</p>
+        
+        <p>随着人们对传统文化的重新认识和珍视，沉香作为佛教文化的重要组成部分，也受到了越来越多的关注。许多修行者开始重视沉香的品质和来源，选择真正的野生沉香进行供养，以表达对佛法的至诚恭敬。</p>
+        
+        <h2>结语</h2>
+        <p>沉香作为佛教中的神圣供养，其意义远超过一般的香料。它不仅是连接人间与佛界的桥梁，更是修行者净化心灵、消除业障的助力。在选择沉香时，真实性和品质尤为重要，只有真正的优质沉香，才能充分发挥其在佛教修行中的作用。</p>
+        
+        <p>在现代快节奏的生活中，沉香提醒着我们回归内心的平静与纯净，这也许正是它在当代社会中持续受到重视的原因之一。</p>
+        
+        <div class="article-tags">
+          <span class="article-tag">沉香</span>
+          <span class="article-tag">佛教文化</span>
+          <span class="article-tag">供养</span>
+          <span class="article-tag">净化</span>
+          <span class="article-tag">修行</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Article Detail 2 -->
+  <section class="article-detail" id="article2">
+    <div class="container">
+      <div class="article-header">
+        <h1 class="article-detail-title">沉香的天然香韵：千变万化的层次</h1>
+        <div class="article-detail-meta">
+          <div class="article-author">作者：香木祥缘</div>
+          <div class="article-date">2025年3月5日</div>
+        </div>
+      </div>
+      
+      <div class="article-detail-image" style="background-image: url('/api/placeholder/1200/600')"></div>
+      
+      <div class="article-detail-content">
+        <p>沉香的天然香韵千变万化，层次丰富多元，闻之有幽雅沉静微微沁凉之感。这种独特的香气特性使沉香成为"香中之王"，备受世界各地香料爱好者和收藏家的追捧。本文将深入探讨沉香独特的香气特性，以及如何品鉴不同产地、不同品级的沉香香气。</p>
+        
+        <h2>沉香香气的形成</h2>
+        <p>沉香是瑞香科白木香属树木因受伤或感染后，在树干内形成的一种树脂浸染木质的产物。沉香的香气之所以如此特别，源于其独特的形成过程。当树木受到真菌感染或外伤后，会分泌特殊的树脂进行自我保护，这些树脂与木质结合，经过长时间的自然陈化，逐渐形成沉香。</p>
+        
+        <p>沉香中含有超过150种化合物，这些复杂的化学成分共同构成了沉香丰富多变的香气层次。其中最主要的香气成分包括沉香酮、沉香醇、沉香二烯酮等，这些成分在不同产地、不同生长环境的沉香中含量各异，因此造就了沉香香气的多样性。</p>
+        
+        <h2>沉香香气的独特特性</h2>
+        <p>沉香的香气有着其他任何天然香料都无法比拟的特性，主要表现在以下几个方面：</p>
+        
+        <h3>幽雅沉静</h3>
+        <p>沉香的香气深沉而内敛，不似其他香料那样浓烈扑鼻。初闻沉香，仿佛只有淡淡的木质香气，但随着时间推移，这种香气会逐渐释放，展现出其深层次的魅力。这种沉静的特质，正是沉香名字的由来，也是其在冥想修行中备受推崇的原因。</p>
+        
+        <h3>微微沁凉</h3>
+        <p>优质沉香在燃烧或加热时，会散发出一种微微沁凉的感觉，这是沉香中特有的凉性成分所致。这种清凉感不仅体现在嗅觉上，更能够影响人的精神状态，使人感到宁静和清爽，有助于净化心灵，排除杂念。</p>
+        
+        <h3>层次丰富</h3>
+        <p>沉香的香气层次极为丰富，可以分为前调、中调和后调。前调通常带有轻微的辛辣感和树脂香；中调则是沉香最为核心的部分，木质香与甜香完美融合；后调则是持久的药香和蜜香，回味悠长。品鉴一款优质沉香，宛如品尝一杯陈年佳酿，每一个层次都带来不同的感官体验。</p>
+        
+        <h3>变化多端</h3>
+        <p>沉香最为神奇的特性在于其香气的变化性。同一块沉香，在不同的温度、湿度条件下，或者在不同的时间段，会展现出完全不同的香气特性。有时候甚至同一块沉香的不同部位，也会有明显的香气差异。这种变化多端的特性，使得每一次品鉴沉香都是独特的体验。</p>
+        
+        <h2>不同产地沉香的香气特点</h2>
+        <p>沉香的产地遍布东南亚各国，不同产地的沉香由于生长环境、气候条件、土壤成分的差异，形成了各具特色的香气风格。以下是几个主要产区沉香的香气
