@@ -112,7 +112,8 @@
 
 /* Article Detail */
 .article-detail {
-  padding: 60px 0;
+  padding: 20px 0;
+  padding-top: 20px 0;
   background-color: #fff;
 }
 
@@ -135,7 +136,7 @@
 
 .article-detail-image {
   width: 100%;
-  height: auto;
+  min-height: 300px;
   background-size: cover;
   background-position: center;
   margin-bottom: 40px;
