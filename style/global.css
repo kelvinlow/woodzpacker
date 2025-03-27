@@ -117,17 +117,33 @@ nav {
 }
 
 .nav-brand {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px; /* Space between logo and text */
+    padding: 10px;
+}
+
+.nav-logo-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.2;
 }
 
 .nav-logo-english {
-  font-size: 0.8rem;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.nav-brand img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -246,6 +262,10 @@ nav {
 @media (max-width: 768px) {
   .nav-container {
     flex-wrap: wrap;
+  }
+
+  .nav-logo {
+    display: none;
   }
   
   #nav-icon3, .menu-toggle {
