@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>啄木鸟 Woodpacker - 天然沉香 | 马来西亚野生沉香 | 佛教珍品 | Natural Agarwood | Malaysian Wild Agarwood | Buddhist Relics</title>
+    <link rel="stylesheet" type="text/css" href="style/global.css">
+    <link rel="stylesheet" type="text/css" href="style/product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=LXGW+WenKai+Mono+TC&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5cf6d0955a.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div id="nav-placeholder"></div>
+    
+    <section class="product-section">
+      <div class="container">
+        <div class="breadcrumb"></div>
+
+        <div class="product-container">
+          <div class="product-gallery">
+            <img class="main-image" src="" alt="" id="main_image" />
+            <div class="thumbnail-container" id="thumbnail_container"></div>
+          </div>
+
+          <div class="product-info">
+            <h1 id="product_name"> Product Name</h1>
+            <div class="product-price">
+              <span class="old-price" id="old_price"></span>
+              <span id="new_price"></span>
+              <span class="discount" id="discount_rate"></span>
+            </div>
+            <div class="product-description" id="product_description"></div>
+            <div class="product-features"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+  </body>
+  <script src="script/global.js"></script>
+  <script>
+    async function fetchProduct(id) {
+      const response = await fetch('/json/products.json');
+      const data = await response.json(); // Convert response to JSON
+      const product = data.find(each => each.id === id)
+
+      if(!product) {
+        window.location.href = "/404";
+      }
+
+      document.getElementById("product_name").innerHTML = product.name
+      document.getElementById("old_price").innerHTML = `RM ${product.old_price}`
+      document.getElementById("new_price").innerHTML = `RM ${product.new_price}`
+      const discount_rate = (product.new_price - product.old_price) / product.old_price * 100;
+      document.getElementById("discount_rate").innerHTML = `${discount_rate.toFixed(0)}%`;
+      document.getElementById("product_description").innerHTML = product.description;
+      document.getElementById("main_image").src = product.images[0];
+
+      let productGalleryHTML = ``;
+      let index = 1;
+      for(const each of product.images) {
+          productGalleryHTML += `
+          <img src="` + each + `" class="thumbnail" id="thumbnail`+ index +`" />
+        `;
+        index++;
+      }
+
+      document.getElementById("thumbnail_container").innerHTML = productGalleryHTML;
+
+      document.getElementById("thumbnail_container").addEventListener("click", function (event) {
+        if (event.target.classList.contains("thumbnail")) {
+          document.getElementById("main_image").src = event.target.src;
+        }
+      });
+    };
+
+    const searchParams = new URLSearchParams(window.location.search);
+    for (const param of searchParams) {
+      if(param[0] !== 'id') {
+        window.location.href = "/404";
+      }
+      fetchProduct(+param[1]);
+    }
+  </script>
+</html>

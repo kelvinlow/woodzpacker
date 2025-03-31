@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Premium Agarwood Chips - Celestial Grade",
+    "description": "<p> Indulge in the sublime aromatic experience of our Premium Celestial Grade Agarwood Chips. Hand-selected from mature trees in sustainably managed forests of Southeast Asia, theseexceptional chips represent the pinnacle of agarwood quality. </p><p> With a rich, complex fragrance profile featuring notes of honey, vanilla, spices, and deep woody undertones, these chips deliver an unparalleled sensory journey that has been treasured by connoisseurs for centuries.</p><p> Our Premium Celestial Grade Agarwood Chips are the result of a meticulous selection process, where only the highest quality resin-rich agarwood is chosen from mature trees that have naturally developed their characteristic fragrance over decades.</p><p> The exceptional quality of these chips is apparent in their fragrance complexity, which unfolds in stages - initially revealing bright, sweet notes before deepening into rich, resinous undertones that linger for hours. This complex profile makes our Celestial Grade chips perfect for ceremonial use, meditation practices, or simply personal enjoyment of one of nature's most precious scents.</p><p> Each purchase includes a certificate of authenticity, detailing the origin, harvesting method, and quality grade of your agarwood chips.</p>",
+    "old_price": 988,
+    "new_price": 888,
+    "images": [
+      "/images/1.jpg",
+      "/images/2.jpg",
+      "/images/3.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "高品质沉香木 Premium Agarwood",
+    "description": "<p> 原始野生沉香木，油脂含量丰富，燃烧时香气独特，适合收藏或熏香使用。 </p><p> Original wild agarwood, rich in resin content, with a unique fragrance when burned, suitable for collection or incense use.</p>",
+    "old_price": 888,
+    "new_price": 688,
+    "images": [
+      "/images/3.jpg",
+      "/images/2.jpg",
+      "/images/1.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "沉香佛珠108颗 108 Agarwood Prayer Beads",
+    "description": "<p> 原108颗精选沉香佛珠，纯手工制作，每颗均匀精致，是修行与收藏的绝佳选择。 </p><p> 108 selected agarwood prayer beads, handcrafted, each bead uniformly exquisite, an excellent choice for spiritual practice and collection.</p>",
+    "old_price": 688,
+    "new_price": 388,
+    "images": [
+      "/images/2.jpg",
+      "/images/3.jpg",
+      "/images/1.jpg"
+    ]
+  }
+]

@@ -1,7 +1,6 @@
 document.getElementById("nav-placeholder").innerHTML = fetch('/components/nav.html')
   .then(response => response.text())
   .then(html => {
-    console.log("Navigation Bar")
     document.getElementById("nav-placeholder").innerHTML = html;
 
     const mobileMenu = document.getElementById('nav-icon3');
@@ -14,7 +13,6 @@ document.getElementById("nav-placeholder").innerHTML = fetch('/components/nav.ht
 document.getElementById("footer-placeholder").innerHTML = fetch('/components/footer.html')
   .then(response => response.text())
   .then(html => {
-    console.log("Footer Bar")
     document.getElementById("footer-placeholder").innerHTML = html;
 });
 
