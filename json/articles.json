@@ -1,5 +1,13 @@
 [
   {
+    "title": "清明节与佛教教会我们的事",
+    "title_en": "Manifestations of Buddhist Integration with Qingming Festival",
+    "author": "Vince Ng",
+    "date": "2025-04-01",
+    "thumbnail": "/images/QingMing2025.jpg",
+    "description": "清明节是一个慎终追远，对已故亲人、祖先表达追思的日子。清明的時候，散居各地的子孫都会回乡，好为先人扫墓，以食物、纸钱和鲜花祭祀。佛教徒也会透过向证悟的众佛祈祷和做供养，为往生者累积功德，再回向给他们，祈愿来世投生善处。",
+    "url": "/articles/buddism-and-qingming"
+  },  {
     "title": "沉香：佛教中的神圣供养",
     "title_en": "Agarwood: Sacred Offering in Buddhism",
     "author": "Vince Ng",
@@ -16,5 +24,14 @@
     "thumbnail": "/images/A-serene-landscape-depicting-a-spiritual-journey.webp",
     "description": "在这个快节奏的世界里，我们常常被生活的喧嚣所淹没，被各种选择和压力所困扰。人生路漫漫，何去何从？",
     "url": "/articles/journey-to-inner-peace"
+  },
+  {
+    "title": "認識香品原料－四大名香：檀香與沉香的差異",
+    "title_en": "The Difference Between Sandalwood and Agarwood",
+    "author": "【台灣】嘉南佛教文物",
+    "date": "2021-07-19",
+    "thumbnail": "/images/incense-knowledge/香品原料－檀香與沉香的差異-1.jpg",
+    "description": "不論沉香、檀香還是中藥香，主要依照自己喜歡的香氣，作為選擇香品的最大考量！值得注意的是，燃香的香氣會隨口鼻、順著呼吸進入身體。對身體及心靈有直接的影響。",
+    "url": "/articles/incense-knowledge"
   }
 ]
