@@ -1,10 +1,14 @@
+---
+// src/pages/index.astro
+---
+
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>啄木鸟 Woodpacker - 天然沉香 | 马来西亚野生沉香 | 佛教珍品 | Natural Agarwood | Malaysian Wild Agarwood | Buddhist Relics</title>
-    <link rel="stylesheet" type="text/css" href="style/global.css">
+    <link rel="stylesheet" type="text/css" href="/style/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=LXGW+WenKai+Mono+TC&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -155,7 +159,7 @@
             <h4 class="about-title-english">Craftsmanship Inherited for Millennia</h4>
             <p class="about-desc">我们是一家专注于马来西亚野生沉香与佛教珍品的企业，拥有数十年的行业经验。我们与马来西亚当地的沉香采集者建立了长期合作关系，确保每一件产品都来源可靠，品质上乘。</p>
             <p class="about-desc-english">We are a company specializing in Malaysian wild agarwood and Buddhist relics, with decades of industry experience. We have established long-term partnerships with local agarwood collectors in Malaysia, ensuring that every product comes from reliable sources and is of superior quality.</p>
-            <p class="about-desc">我们秉承"诚信经营，品质至上"的理念，致力于为广大沉香爱好者和佛教信徒提供真正的野生沉香和佛教珍品，让更多人能够体验到高品质沉香的魅力。</p>
+            <p class="about-desc">我们秉承「诚信经营，品质至上」的理念，致力于为广大沉香爱好者和佛教信徒提供真正的野生沉香和佛教珍品，让更多人能够体验到高品质沉香的魅力。</p>
             <p class="about-desc-english">We uphold the principle of "integrity in business, quality first" and are committed to providing genuine wild agarwood and Buddhist relics to agarwood enthusiasts and Buddhist believers, allowing more people to experience the charm of high-quality agarwood.</p>
           </div>
         </div>
@@ -220,22 +224,22 @@
     <!-- Footer -->
     <div id="footer-placeholder"></div>
   </body>
-  <script>
+  <script is:inline>
     const d = new Date();
     const seconds = d.getSeconds();
     if(seconds % 2 === 0) {
       document.getElementById("video-overlay").innerHTML = `
         <video autoplay muted loop width="auto" height="auto" >
-          <source id="bgVideo" src="background/background1.mp4" type="video/mp4"></source>
+          <source id="bgVideo" src="/background/background1.mp4" type="video/mp4"></source>
         </video>
       `;
     } else {
       document.getElementById("video-overlay").innerHTML = `
         <video autoplay muted loop width="auto" height="auto" >
-          <source id="bgVideo" src="background/background2.mp4" type="video/mp4"></source>
+          <source id="bgVideo" src="/background/background2.mp4" type="video/mp4"></source>
         </video>
       `;
     }
   </script>
-  <script src="script/global.js"></script>
+  <script is:inline src="/script/global.js"></script>
 </html>

@@ -1,10 +1,18 @@
+---
+// src/pages/articles/index.astro
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('articles');
+articles.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+---
+
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>沉香文化 | 马来西亚野生沉香 | 佛教珍品</title>
-    <link rel="stylesheet" type="text/css" href="style/global.css">
+    <link rel="stylesheet" type="text/css" href="/style/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=LXGW+WenKai+Mono+TC&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -358,47 +366,30 @@
         
         <!-- Articles Grid -->
         <div class="articles-grid" id="articles-grid">
+          {articles.map(article => (
+            <div class="article-card">
+              <div class="article-image" style={`background-image: url('${article.data.image || ''}')`}></div>
+              <div class="article-content">
+                <h3 class="article-title">
+                  {article.data.title}<br/>{article.data.title_en}
+                </h3>
+                <div class="article-meta">
+                  <div class="article-author">{article.data.author}</div>
+                  <div class="article-date">{new Date(article.data.date).toLocaleDateString()}</div>
+                </div>
+                <div class="article-excerpt">
+                  {article.body ? article.body.substring(0, 150).replace(/<[^>]*>?/gm, '') + "..." : ""}
+                </div>
+                <a href={`/articles/${article.slug}`} class="article-link">阅读全文 Full Articles</a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-;    </section>
+    </section>
   
     <!-- Footer -->
     <div id="footer-placeholder"></div>
   </body>
-  <script src="script/global.js"></script>
-  <script>
-    async function fetchData() {
-      try {
-        const response = await fetch('/json/articles.json');
-        const data = await response.json(); // Convert response to JSON
-        let html = "";
-        
-        for(const item of data) {
-          html += `
-            <div class="article-card">
-              <div class="article-image" style="background-image: url('`+ item.thumbnail +`')"></div>
-                <div class="article-content">
-                  <h3 class="article-title">
-                    `+ item.title +`<br>`+ item.title_en +`
-                  </h3>
-                  <div class="article-meta">
-                    <div class="article-author">` + item.author + `</div>
-                    <div class="article-date">` + item.date + `</div>
-                  </div>
-                  <div class="article-excerpt">
-                    ` + item.description + `
-                  </div>
-                  <a href="` + item.url + `" class="article-link">阅读全文 Full Articles</a>
-                </div>
-              </div>
-            </div>
-          `;
-        }
-        document.getElementById("articles-grid").innerHTML = html
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-    fetchData();
-  </script>
+  <script is:inline src="/script/global.js"></script>
 </html>

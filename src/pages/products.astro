@@ -1,11 +1,15 @@
+---
+// src/pages/products.astro
+---
+
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>啄木鸟 Woodpacker - 天然沉香 | 马来西亚野生沉香 | 佛教珍品 | Natural Agarwood | Malaysian Wild Agarwood | Buddhist Relics</title>
-    <link rel="stylesheet" type="text/css" href="style/global.css">
-    <link rel="stylesheet" type="text/css" href="style/product.css">
+    <link rel="stylesheet" type="text/css" href="/style/global.css">
+    <link rel="stylesheet" type="text/css" href="/style/product.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=LXGW+WenKai+Mono+TC&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -42,8 +46,8 @@
     <!-- Footer -->
     <div id="footer-placeholder"></div>
   </body>
-  <script src="script/global.js"></script>
-  <script>
+  <script is:inline src="/script/global.js"></script>
+  <script is:inline>
     async function fetchProduct(id) {
       const response = await fetch('/json/products.json');
       const data = await response.json(); // Convert response to JSON

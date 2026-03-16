@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articleEntries = await getCollection('articles');
+  return articleEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{entry.data.title} | 啄木鸟 Woodspacker</title>
+    <link rel="stylesheet" type="text/css" href="/style/global.css">
+    <link rel="stylesheet" type="text/css" href="/style/article.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=LXGW+WenKai+Mono+TC&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Article Detail -->
+    <section class="article-detail" id="article1">
+      <div class="container" style="padding: 50px; max-width: 768px;">
+        <div class="article-header">
+          <h1 class="article-detail-title">
+            {entry.data.title} <br>
+            {entry.data.title_en}
+          </h1>
+          <div class="article-detail-meta">
+            <div class="article-author">作者：{entry.data.author}</div>
+            <div class="article-date">{new Date(entry.data.date).toLocaleDateString()}</div>
+          </div>
+        </div>
+
+        {entry.data.image && (
+          <div
+            class="article-detail-image"
+            style={`background-image: url('${entry.data.image}')`}
+          ></div>
+        )}
+
+        <div class="article-detail-content">
+          <Content />
+        </div>
+
+        {entry.data.tags && entry.data.tags.length > 0 && (
+          <div class="article-tags">
+            {entry.data.tags.map(tag => (
+              <span class="article-tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+  </body>
+  <script is:inline src="/script/global.js"></script>
+</html>
