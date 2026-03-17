@@ -2,9 +2,21 @@
 title: '沉香：佛教中的神圣供养'
 title_en: 'Agarwood: Sacred Offering in Buddhism'
 author: '香木祥缘'
-date: '2025-03-10'
+date: 2025-03-10T00:00:00.000Z
 image: '/images/Agarwood-in-burner.jpg'
-tags: ['沉香', '佛教文化', '供养', '净化', '修行', 'Agarwood', 'Buddhist culture', 'Offerings', 'Purification', 'Practice']
+tags:
+  [
+    '沉香',
+    '佛教文化',
+    '供养',
+    '净化',
+    '修行',
+    'Agarwood',
+    'Buddhist culture',
+    'Offerings',
+    'Purification',
+    'Practice'
+  ]
 ---
 
 <p>

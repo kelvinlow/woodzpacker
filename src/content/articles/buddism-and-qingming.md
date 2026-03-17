@@ -2,7 +2,7 @@
 title: '清明节与佛教的融合：孝道与报恩'
 title_en: 'The Fusion of Buddhism and Qingming Festival: Filial Piety and Gratitude'
 author: 'Vince Ng'
-date: '2025-04-01'
+date: 2025-04-01T00:00:00.000Z
 image: '/images/QingMing2025.jpg'
 tags: ['清明节', '佛教', '拜祭', '焚香祈福']
 ---

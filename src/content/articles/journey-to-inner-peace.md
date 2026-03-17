@@ -2,9 +2,21 @@
 title: '心灵的归处：寻找内心的家园'
 title_en: 'Finding Your Spiritual Home: A Journey to Inner Peace'
 author: '香木祥缘'
-date: '2025-03-10'
+date: 2025-03-10T00:00:00.000Z
 image: '/images/A-serene-landscape-depicting-a-spiritual-journey.webp'
-tags: ['反思', '佛教文化', '法修行者', '心灵家园', '平静', 'Self-Reflection', 'Buddhist culture', 'Practitioners', 'Spiritual Home', 'Stillness']
+tags:
+  [
+    '反思',
+    '佛教文化',
+    '法修行者',
+    '心灵家园',
+    '平静',
+    'Self-Reflection',
+    'Buddhist culture',
+    'Practitioners',
+    'Spiritual Home',
+    'Stillness'
+  ]
 ---
 
 <p>在这个快节奏的世界里，我们常常被生活的喧嚣所淹没，被各种选择和压力所困扰。人生路漫漫，何去何从？这个问题时常让人感到迷茫和不安。正如那句古老的智慧所言：人必须要寻找到一处真正属于自己心灵寄托的家园，使心有所归，行有所往，才能活得踏实稳定而不至于彷徨无依，活得充满希望而不至于落魄无奈。</p>

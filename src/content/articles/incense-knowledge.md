@@ -2,7 +2,7 @@
 title: '認識香品原料－四大名香：檀香與沉香的差異'
 title_en: 'The Difference Between Sandalwood and Agarwood'
 author: '【台灣】嘉南佛教文物'
-date: '2021-07-19'
+date: 2021-07-19T00:00:00.000Z
 image: '/images/incense-knowledge/香品原料－檀香與沉香的差異-1.jpg'
 tags: ['檀香', '沉香']
 ---
@@ -66,7 +66,6 @@ tags: ['檀香', '沉香']
 
 <p>檀香的氣韻聖潔，被稱為「從心靈自然散發出的戒香」，獨特的安撫作用，可以平緩焦慮，給人祥和放鬆的感覺，特別適合生活節奏快速，情緒容易緊繃的人。</p>
 <p>Sandalwood's aroma is sacred and is called "the incense of discipline that naturally emanates from the heart." Its unique soothing effect can ease anxiety and give people a sense of peace and relaxation, especially suitable for people with fast-paced lifestyles who are prone to tension.</p>
-
 
 <p>簡單來說，檀香氣味的生成，直接源自檀香木本身。沉香氣味的來源，卻是沉香木自我修復過程中產生的樹脂。後者因產量稀缺，價位較高。</p>
 <p>Simply put, the origin of sandalwood fragrance comes directly from the sandalwood itself. However, the source of agarwood fragrance is the resin produced during the self-healing process of the agarwood tree. The latter is scarcer in production and higher in price.</p>
